@@ -1,0 +1,135 @@
+.App {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background: -webkit-linear-gradient(to left, #656e67, #dbdbb8);
+  background: linear-gradient(to left, #a3c9a9, #b5bb66);
+}
+
+.content-header {
+  font-family: "Anton", sans-serif;
+  color: BLACK;
+  font-size: 75px;
+}
+
+.section-content {
+  text-align: center;
+}
+
+.contact-section {
+  padding-top: 40px;
+}
+.contact-section .col-md-6 {
+  width: 50%;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+label {
+  font-size: 1.8em;
+  line-height: 1em;
+  font-weight: normal;
+}
+
+textarea.form-control {
+  height: 150px;
+}
+
+.title {
+  font-size: large;
+  text-align: center;
+}
+
+form.signup,
+form.signin {
+  margin-top: 40px;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+  /* text-shadow: 0 1px 0 rgb(243, 97, 0), 0 2px 0 rgb(230, 109, 11); */
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1:hover {
+  text-shadow: 0 1px 0 rgb(243, 97, 0), 0 2px 0 rgb(230, 109, 11),
+    0 3px 0 rgb(230, 109, 11), 0 4px 0 rgb(230, 109, 11),
+    0 5px 0 rgb(230, 109, 11), 0 6px 0 rgb(240, 145, 67),
+    0 7px 0 rgb(238, 160, 96), 0 8px 0 rgb(236, 157, 82),
+    0 9px 0 rgb(238, 187, 20), 0 10px 0 rgb(236, 206, 36),
+    0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* .form-text {
+  font-size: 20px;
+  color: rgb(5, 5, 5);
+  text-shadow: 2px 2px 4px #000000;
+} */
+
+.subt {
+  font-family: "Open Sans", sans-serif;
+  font-size: 35px;
+  color: rgb(252, 249, 249);
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.link-style {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: rgb(12, 12, 12);
+  text-shadow: 2px 2px 4px #883d12;
+}
+
+/* .subt1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  color: rgb(252, 249, 249);
+  text-shadow: 2px 2px 4px #000000;
+} */
+/* .text1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(252, 249, 249);
+  text-align: center; 
+} */
+
+/* .link2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(12, 12, 12);
+  text-shadow: 2px 2px 4px #883d12;
+} */
+/* .book-description {
+  background-color: white;
+  float: right;
+}
+
+.book-title {
+  background-color: white;
+} */
+
+* {
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 12pt;
+}
