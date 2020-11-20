@@ -42,11 +42,12 @@ export default {
   },
   saveReview: function (id, reviewData) {
     console.log(reviewData);
-    return axios.post(`/api/reviews/${id}`, reviewData);
+    return axios.post(`/api/reviews/${id}/all`, reviewData);
   },
 
   getReviewsByBook: function (id) {
-    return axios.get("/api/reviews/" + id); //ALG get all reviews by book id
+    //return axios.get("/api/reviews/" + id); //ALG get all reviews by book id
+    return axios.get(`/api/reviews/${id}/all`);
   },
 
   getFavorites: function () {

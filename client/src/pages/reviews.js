@@ -62,8 +62,8 @@ function Reviews(props) {
     event.preventDefault();
     if (formObject.reviewText) {
       console.log("bookid:", book._id);
-      console.log(book.title);
-      console.log("formObject.reviewText", formObject.reviewText);
+      console.log("book.title: ", book.title);
+      console.log("formObject.reviewText: ", formObject.reviewText);
 
       API.saveReview(id, {
         bookId: book._id,

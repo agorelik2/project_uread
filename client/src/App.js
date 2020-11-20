@@ -160,7 +160,7 @@ class App extends Component {
             <Route exact path="/books/:id">
               <Detail />
             </Route>
-            <Route exact path="/reviews/:id">
+            <Route exact path="/reviews/:id/all">
               <Reviews
                 id={this.state.id}
                 firstName={this.state.firstName}

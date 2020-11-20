@@ -113,7 +113,7 @@ function Books(props) {
             <List>
               {books.map((book) => (
                 <ListItem key={book._id}>
-                  <Link to={"/reviews/" + book._id}>
+                  <Link to={"/reviews/" + book._id + "/all"}>
                     <strong>
                       {book.title} by {book.author}
                     </strong>
