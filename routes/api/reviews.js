@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const reviewsController = require("../../controllers/reviewsController");
 
-router.route("/").get(reviewsController.findAll).post(reviewsController.create);
+// router.route("/").get(reviewsController.findAll).post(reviewsController.create);
 
 //Matches with "/api/reviews/uid"
 router

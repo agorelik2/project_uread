@@ -65,7 +65,7 @@ function Reviews(props) {
       console.log(book.title);
       console.log("formObject.reviewText", formObject.reviewText);
 
-      API.saveReview({
+      API.saveReview(id, {
         bookId: book._id,
         title: book.title,
         authors: book.author,

@@ -40,9 +40,9 @@ export default {
   deleteReview: function (id) {
     return axios.delete("/api/reviews/" + id);
   },
-  saveReview: function (reviewData) {
+  saveReview: function (id, reviewData) {
     console.log(reviewData);
-    return axios.post("/api/reviews", reviewData);
+    return axios.post(`/api/reviews/${id}`, reviewData);
   },
 
   getReviewsByBook: function (id) {
