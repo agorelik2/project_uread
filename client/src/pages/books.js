@@ -13,6 +13,16 @@ function Books(props) {
   const [books, setBooks] = useState([]);
   const [formObject, setFormObject] = useState({});
   const [term, setTerm] = useState({});
+  const [recomTitle, setRecomTitle] = useState(
+    props.location?.state?.title ?? ""
+  );
+  const [recomAuthors, setRecomAuthors] = useState(
+    props.location?.state?.authors ?? ""
+  );
+
+  console.log(props.location);
+  console.log("recom title: ", recomTitle);
+  console.log("recom  authors: ", recomAuthors);
 
   // console.log("User ID:");
   // console.log(props.id);
@@ -44,6 +54,7 @@ function Books(props) {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.author) {
+      //if (recomTitle) {formObject.title: recomTitle}   ---> correct ALG
       API.saveBook({
         title: formObject.title,
         author: formObject.author,
@@ -81,12 +92,14 @@ function Books(props) {
               name="title"
               placeholder="Title (required)"
               value={formObject.title}
+              defaultValue={recomTitle}
             />
             <Input
               onChange={handleInputChange}
               name="author"
               placeholder="Author (required)"
               value={formObject.author}
+              defaultValue={recomAuthors}
             />
             <TextArea
               onChange={handleInputChange}

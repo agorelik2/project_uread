@@ -3,6 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
@@ -125,6 +126,22 @@ function Search(props) {
                       {" "}
                       Save to Favorites
                     </SaveBtn>
+
+                    <Link
+                      to={{
+                        pathname: "/books",
+                        state: {
+                          title: book.volumeInfo.title,
+                          authors: book.volumeInfo.authors,
+                        },
+                      }}
+                    >
+                      <span className="recom-btn">
+                        {" "}
+                        Recommend
+                        <i className="far fa-thumbs-up fa-2x fa-fw"></i>{" "}
+                      </span>
+                    </Link>
                   </ListItem>
                 );
               })}

@@ -137,8 +137,9 @@ class App extends Component {
             <Route
               exact
               path="/books"
-              render={() => (
+              render={(props) => (
                 <Books
+                  {...props}
                   email={this.state.email}
                   isloggedIn={this.state.isloggedIn}
                   id={this.state.id}

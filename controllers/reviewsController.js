@@ -30,7 +30,8 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
+    console.log("review route *****");
     db.Review.create(req.body)
       .then((dbReviewModel) => res.json(dbReviewModel))
       .catch((err) => res.status(422).json(err));

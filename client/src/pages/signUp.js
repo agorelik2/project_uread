@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Api from "../utils/API";
 import { Link, Redirect } from "react-router-dom";
 import { withRouter } from "react-router-dom";
@@ -8,22 +8,18 @@ import { Container, Row, Col } from "react-bootstrap";
 function SignUp(props) {
   // const classes = useStyles();
 
-  console.log("****************** Props from signup ************");
-  console.log(props.firstName);
-
   //Redirect hook
   const [redirect, setRedirect] = useState("");
-
-  //Valid Input Hook
-  const [isInputValid, setIsInputValid] = useState("yes");
 
   //Hook for email
   const [email, setEmail] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
 
-  //handle input for email
+  //Handle input for email
   const handleEmailInput = (event) => {
     setEmail(event.target.value);
+    setErrorEmail("");
+    setErrorPassword("");
     console.log(email);
   };
 
@@ -35,6 +31,9 @@ function SignUp(props) {
   const handlePasswordInput = (event) => {
     setPassword(event.target.value);
     console.log(password);
+    if (password.length > 6 && errorPassword != "") {
+      setErrorPassword("");
+    }
   };
 
   //firstName hook
@@ -44,6 +43,9 @@ function SignUp(props) {
   //Handle input for first name
   const handleFirstNameInput = (event) => {
     setFirstName(event.target.value);
+    if (firstName.length > 1 && errorFirstName != "") {
+      setErrorFirstName("");
+    }
   };
 
   //Last name hook
@@ -54,54 +56,62 @@ function SignUp(props) {
   const handleLastNameInput = (event) => {
     setLastName(event.target.value);
     console.log(lastName);
+    if (lastName.length > 1 && errorLastName != "") {
+      setErrorLastName("");
+    }
   };
 
   //Validate User's Input
-  function validateInput() {
-    console.log("isInputValid line 61: ", isInputValid);
+  const validateInput = () => {
     let fl = firstName.length;
     console.log("fl:", fl);
     if (!firstName || fl < 2) {
       setErrorFirstName("*Invalid First Name");
-      setIsInputValid("no");
-      console.log("errorFirstName", errorFirstName);
-      console.log("isInputValid firstName: ", isInputValid);
     }
 
     let ll = lastName.length;
-    console.log(ll);
+
     if (!lastName || ll < 2) {
       console.log("ll:", ll);
       setErrorLastName("*Invalid Last Name");
-      setIsInputValid("no");
-      console.log("errorLastName", errorLastName);
-      console.log("isInputValid lastName: ", isInputValid);
     }
     const pattern = new RegExp(
       /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
     );
     if (!pattern.test(email)) {
       setErrorEmail("*Invalid Email Address");
-      setIsInputValid("no");
-      console.log("isInputValid email: ", isInputValid);
     }
 
     let pl = password.length;
     if (!password || pl < 6) {
       setErrorPassword("*Password has to be at least 6 char long");
-      setIsInputValid("no");
-      console.log("isInputValid password: ", isInputValid);
     }
-  }
+
+    if (
+      firstName &&
+      fl > 2 &&
+      lastName &&
+      ll > 2 &&
+      pattern.test(email) &&
+      password &&
+      pl > 6
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   //Saving person in database
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("clicked");
 
-    validateInput();
-    console.log("isInputValid line 101", isInputValid);
-    if (isInputValid === "yes") {
+    const isValid = await validateInput();
+    console.log(isValid);
+
+    if (isValid) {
+      console.log("passed validation pppp");
       Api.signup({
         firstName,
         lastName,
@@ -111,13 +121,14 @@ function SignUp(props) {
         .then((response) => {
           console.log("signup response: ");
           console.log(response);
-          if (response.status === 200) {
+          console.log(response.status);
+          if (response.status === 200 && !response.data.errors) {
             // update App.js state
             props.updateUser(response.data);
             //props.id = response.data._id;
             console.log(props.id);
             console.log("~~~~~~~~~~~~~~~)");
-            console.log("response data from SignUp 110");
+            console.log("response data from SignUp 132");
             console.log(response.data);
             // update the state to redirect to books
             setRedirect("/books");
@@ -132,7 +143,7 @@ function SignUp(props) {
           setErrorEmail(error);
         });
     } else {
-      setErrorPassword("*Invalid Entry, Please Correct");
+      console.log("failed validation pppp");
     }
   };
 

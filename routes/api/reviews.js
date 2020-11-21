@@ -12,7 +12,7 @@ router
 
 //Matches with "/api/reviews/:id"
 router
-  .route("/:id/all")
+  .route("/:id")
   .get(reviewsController.findByBookId)
   .post(reviewsController.create)
   .put(reviewsController.remove)

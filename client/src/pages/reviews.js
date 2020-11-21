@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+import JumbotronSmall from "../components/JumbotronSmall";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import API from "../utils/API";
@@ -105,7 +106,8 @@ function Reviews(props) {
       </Row>
       <Row>
         <Col size="md-10 md-offset-1">
-          <article>
+          <Container fluid>
+            {/* <article> */}
             {/* <h2>Reviews</h2> <br></br> */}
             <p>
               <strong>
@@ -113,19 +115,33 @@ function Reviews(props) {
               </strong>
               : {book.description}
             </p>
-          </article>
+            {/* </article> */}
+          </Container>
         </Col>
       </Row>
       <Row>
-        <Col size="md-6">
+        <Col size="md-6 sm-12">
+          <JumbotronSmall>
+            <h4>Read the Book? Please share your thoughts</h4>
+          </JumbotronSmall>
+        </Col>
+        <Col size="md-6 sm-12">
+          <JumbotronSmall>
+            <h4>Check Out the Reviews of Our Members</h4>
+          </JumbotronSmall>
+        </Col>
+      </Row>
+      <Row style={{ marginTop: 0, paddingTop: 0 }}>
+        <Col size="md-6 sm-12">
           {/* <Container>
             <h2>Review the Book</h2>
           </Container> */}
           <form>
             <TextArea
+              style={{ marginTop: 0, paddingTop: 0 }}
               onChange={handleInputChange}
               name="reviewText"
-              placeholder="Review (Optional)"
+              placeholder="Write a Review"
               value={formObject.reviewText}
             />
             <FormBtn
@@ -137,25 +153,27 @@ function Reviews(props) {
           </form>
         </Col>
         <Col size="md-6 sm-12">
-          <Jumbotron>
+          {/* <Jumbotron>
             <h2>Check Out All The Reviews</h2>
             <Link to={"/books/uid"}>
               <h4>View Books Recommended by {props.firstName}</h4>
             </Link>
-          </Jumbotron>
+          </Jumbotron> */}
           {reviews.length ? (
-            <List>
-              {reviews.map((review) => (
-                <ListItem key={review._id}>
-                  <Link to={"/reviews/read/" + review._id}>
-                    <strong>
-                      {review.firstName} {review.lastName}:{" "}
-                    </strong>
-                    {review.reviewText}
-                  </Link>
-                </ListItem>
-              ))}
-            </List>
+            <div>
+              <List>
+                {reviews.map((review) => (
+                  <ListItem key={review._id}>
+                    <Link to={"/reviews/read/" + review._id}>
+                      <strong>
+                        {review.firstName} {review.lastName}:{" "}
+                      </strong>
+                      {review.reviewBody}
+                    </Link>
+                  </ListItem>
+                ))}
+              </List>
+            </div>
           ) : (
             <h3>No Results to Display</h3>
           )}
