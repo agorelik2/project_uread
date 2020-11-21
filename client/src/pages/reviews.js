@@ -101,12 +101,28 @@ function Reviews(props) {
             <h4>
               Recommended by {ruser.firstName} {ruser.lastName}
             </h4>
+            <Row>
+              <Col size="md-3">
+                <Link to="/books" style={{ textAlign: "left" }}>
+                  <i className="fas fa-long-arrow-alt-left"></i> Back to All
+                  Recommended Books
+                </Link>
+              </Col>
+              <Col size="md-3"></Col>
+              <Col size="md-3"></Col>
+              <Col size="md-3">
+                <Link to="/books/uid" style={{ textAlign: "left" }}>
+                  <i className="fas fa-long-arrow-alt-left"></i> Back to Books
+                  Recommended by you
+                </Link>
+              </Col>
+            </Row>
           </Jumbotron>
         </Col>
       </Row>
       <Row>
         <Col size="md-10 md-offset-1">
-          <Container fluid>
+          <Container fluid style={{ backgroundColor: "yellow" }}>
             {/* <article> */}
             {/* <h2>Reviews</h2> <br></br> */}
             <p>
@@ -133,9 +149,6 @@ function Reviews(props) {
       </Row>
       <Row style={{ marginTop: 0, paddingTop: 0 }}>
         <Col size="md-6 sm-12">
-          {/* <Container>
-            <h2>Review the Book</h2>
-          </Container> */}
           <form>
             <TextArea
               style={{ marginTop: 0, paddingTop: 0 }}
@@ -153,14 +166,8 @@ function Reviews(props) {
           </form>
         </Col>
         <Col size="md-6 sm-12">
-          {/* <Jumbotron>
-            <h2>Check Out All The Reviews</h2>
-            <Link to={"/books/uid"}>
-              <h4>View Books Recommended by {props.firstName}</h4>
-            </Link>
-          </Jumbotron> */}
           {reviews.length ? (
-            <div>
+            <div style={{ marginTop: 10 }}>
               <List>
                 {reviews.map((review) => (
                   <ListItem key={review._id}>
@@ -177,16 +184,6 @@ function Reviews(props) {
           ) : (
             <h3>No Results to Display</h3>
           )}
-        </Col>
-      </Row>
-      <Row>
-        <Col size="md-10">
-          <Link to="/books">← Back to All Recommended Books</Link>
-        </Col>
-      </Row>
-      <Row>
-        <Col size="md-10">
-          <Link to="/books/uid">← Back to Books Recommended by you</Link>
         </Col>
       </Row>
     </Container>

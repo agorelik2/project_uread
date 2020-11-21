@@ -11,24 +11,17 @@ import Nav from "../components/Nav";
 function Books(props) {
   // Setting our component's initial state
   const [books, setBooks] = useState([]);
-  const [formObject, setFormObject] = useState({});
+  const [formObject, setFormObject] = useState({
+    title: props.location?.state?.title ?? "",
+    author: props.location?.state?.authors[0] ?? "",
+  });
+
   const [term, setTerm] = useState({});
-  const [recomTitle, setRecomTitle] = useState(
-    props.location?.state?.title ?? ""
-  );
-  const [recomAuthors, setRecomAuthors] = useState(
-    props.location?.state?.authors ?? ""
-  );
 
-  console.log(props.location);
-  console.log("recom title: ", recomTitle);
-  console.log("recom  authors: ", recomAuthors);
+  // console.log(props.location);
+  // console.log("recom title: ", recomTitle);
+  // console.log("recom  authors: ", recomAuthors);
 
-  // console.log("User ID:");
-  // console.log(props.id);
-  // console.log(props.firstName);
-  // console.log(props.lastName);
-  // console.log(props.email);
   //console.log(props);
 
   // Load all books and store them with setBooks
@@ -54,7 +47,7 @@ function Books(props) {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.author) {
-      //if (recomTitle) {formObject.title: recomTitle}   ---> correct ALG
+      console.log(formObject);
       API.saveBook({
         title: formObject.title,
         author: formObject.author,
@@ -92,19 +85,17 @@ function Books(props) {
               name="title"
               placeholder="Title (required)"
               value={formObject.title}
-              defaultValue={recomTitle}
             />
             <Input
               onChange={handleInputChange}
               name="author"
               placeholder="Author (required)"
               value={formObject.author}
-              defaultValue={recomAuthors}
             />
             <TextArea
               onChange={handleInputChange}
               name="description"
-              placeholder="Review (Optional)"
+              placeholder="Why do you recommend this book? (Optional)"
               value={formObject.description}
             />
             <FormBtn
@@ -121,6 +112,11 @@ function Books(props) {
             <Link to={"/books/uid"}>
               <h4>View Books Recommended by {props.firstName}</h4>
             </Link>
+            <p>
+              Click on a book title to write a review or view our members'
+              reviews. Click on a <i className="fas fa-search fa-2x"></i> to
+              search Google for more detail info on the book.
+            </p>
           </Jumbotron>
           {books.length ? (
             <List>

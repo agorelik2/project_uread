@@ -98,10 +98,10 @@ function UserBooks(props) {
       <Row>
         <Col size="md-6">
           <Jumbotron>
-            <h2>Update Your Book Review</h2>
+            <h2>Update Your Recommended Book</h2>
             <h5>
               Click on <i className="far fa-edit fa-2x"></i> next to the book
-              name{" "}
+              you want to update.{" "}
             </h5>
           </Jumbotron>
           <form>
@@ -128,7 +128,7 @@ function UserBooks(props) {
               disabled={!(formObject.author && formObject.title)}
               onClick={handleFormSubmit}
             >
-              Update Book Review
+              Update Book
             </FormBtn>
           </form>
         </Col>
