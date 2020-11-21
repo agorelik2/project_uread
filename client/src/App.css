@@ -59,8 +59,14 @@ form.signin {
 }
 .recommendation {
   background-color: #f5ee93;
-  margin-top: 20px;
+  margin-top: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 10px;
+  width: 100%;
+}
+.isbn {
+  font-family: "Roboto";
 }
 
 h2 {

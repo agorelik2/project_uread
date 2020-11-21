@@ -64,6 +64,11 @@ function Search(props) {
     console.log(index);
     console.log(result[index].id);
     console.log(result[index]);
+    console.log(result[0].volumeInfo.industryIdentifiers[0].identifier);
+    console.log(
+      result[index].volumeInfo["industryIdentifiers"][1]["identifier"]
+    );
+    console.log("++++++++++++++++++++++++++++++++++++");
     API.saveFavorite({
       user: props.id,
       googleId: result[index].id,
@@ -103,7 +108,7 @@ function Search(props) {
                   <ListItem key={book.id}>
                     <div className="book-title">
                       <strong>
-                        {book.volumeInfo.title} by {book.volumeInfo.authors}
+                        {book.volumeInfo.title} by {book.volumeInfo.authors[0]}
                       </strong>
                     </div>
                     <br></br>
@@ -118,7 +123,14 @@ function Search(props) {
                         alt={book.volumeInfo.title}
                       />
                     </a>
+                    <strong>
+                      <p className="isbn">
+                        ISBN#:{" "}
+                        {book.volumeInfo.industryIdentifiers[1].identifier}
+                      </p>
+                    </strong>
                     <p>{book.volumeInfo.description}</p>
+
                     <SaveBtn
                       onClick={() => handleBookSave(index)}
                       className="btn"

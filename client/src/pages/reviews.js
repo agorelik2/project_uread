@@ -121,7 +121,8 @@ function Reviews(props) {
         </Col>
       </Row>
       <Row>
-        <Col size="md-10 md-offset-1">
+        {/* <Col size="md-11 md-offset-1"> */}
+        <Col size="lg-12">
           <Container>
             {/* <article> */}
             {/* <h2>Reviews</h2> <br></br> */}
