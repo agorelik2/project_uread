@@ -122,10 +122,10 @@ function Reviews(props) {
       </Row>
       <Row>
         <Col size="md-10 md-offset-1">
-          <Container fluid style={{ backgroundColor: "yellow" }}>
+          <Container>
             {/* <article> */}
             {/* <h2>Reviews</h2> <br></br> */}
-            <p>
+            <p className="recommendation">
               <strong>
                 {ruser.firstName} {ruser.lastName}
               </strong>

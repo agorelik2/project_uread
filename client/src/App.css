@@ -57,6 +57,11 @@ form.signup,
 form.signin {
   margin-top: 40px;
 }
+.recommendation {
+  background-color: #f5ee93;
+  margin-top: 20px;
+  padding: 10px;
+}
 
 h2 {
   color: black;
