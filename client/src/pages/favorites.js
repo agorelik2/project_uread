@@ -77,7 +77,7 @@ function Favorites(props) {
               ))}
             </List>
           ) : (
-            <h2>No Books to Display</h2>
+            <h5>No Favorites to Display</h5>
           )}
         </Col>
       </Row>

@@ -166,7 +166,7 @@ function Search(props) {
               })}
             </List>
           ) : (
-            <h3> No Results to Display</h3>
+            <h5> No Results to Display</h5>
           )}
         </Col>
       </Row>

@@ -10,7 +10,7 @@ URead
 
 ### Google Book Search
 
-[Link to the deployed application](https://google-books-search-alg.herokuapp.com/)
+[Link to the deployed application](https://uread-mern-app.herokuapp.com/)
 
 ## Table of Content
 
@@ -228,7 +228,7 @@ https://github.com/agorelik2/google-books-search
 
 ## Demo:
 
-https://google-books-search-alg.herokuapp.com/
+https://uread-mern-app.herokuapp.com/
 
 ## Developer
 
