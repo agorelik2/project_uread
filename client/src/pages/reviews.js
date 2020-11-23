@@ -96,7 +96,8 @@ function Reviews(props) {
         <Col size="md-12">
           <Jumbotron>
             <h1>
-              Reviews of {book.title} by {book.author}
+              Reviews of <span className="review-title">{book.title}</span> by{" "}
+              {book.author}
             </h1>
             <h4>
               Recommended by {ruser.firstName} {ruser.lastName}

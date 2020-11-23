@@ -58,7 +58,7 @@ form.signin {
   margin-top: 40px;
 }
 .recommendation {
-  background-color: #f5ee93;
+  background-color: #f5d59b;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 0px;
@@ -71,7 +71,10 @@ form.signin {
 .isbn {
   font-family: "Roboto";
 }
-
+.review-title {
+  color: orange;
+  font-size: 38px;
+}
 h2 {
   color: black;
   text-align: center;
