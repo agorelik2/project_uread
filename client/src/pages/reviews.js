@@ -104,38 +104,28 @@ function Reviews(props) {
             <Row>
               <Col size="md-3">
                 <Link to="/books" style={{ textAlign: "left" }}>
-                  <i className="fas fa-long-arrow-alt-left"></i> Back to All
-                  Recommended Books
+                  <i className="fas fa-long-arrow-alt-left"></i>{" "}
+                  <span className="back-link">
+                    Back to All Recommended Books
+                  </span>
                 </Link>
               </Col>
               <Col size="md-3"></Col>
               <Col size="md-3"></Col>
               <Col size="md-3">
                 <Link to="/books/uid" style={{ textAlign: "left" }}>
-                  <i className="fas fa-long-arrow-alt-left"></i> Back to Books
-                  Recommended by you
+                  <i className="fas fa-long-arrow-alt-left"></i>
+                  <span className="back-link">
+                    {" "}
+                    Back to Books Recommended by you
+                  </span>
                 </Link>
               </Col>
             </Row>
           </Jumbotron>
         </Col>
       </Row>
-      <Row>
-        {/* <Col size="md-11 md-offset-1"> */}
-        <Col size="lg-12">
-          <Container>
-            {/* <article> */}
-            {/* <h2>Reviews</h2> <br></br> */}
-            <p className="recommendation">
-              <strong>
-                {ruser.firstName} {ruser.lastName}
-              </strong>
-              : {book.description}
-            </p>
-            {/* </article> */}
-          </Container>
-        </Col>
-      </Row>
+
       <Row>
         <Col size="md-6 sm-12">
           <JumbotronSmall>
@@ -167,17 +157,26 @@ function Reviews(props) {
           </form>
         </Col>
         <Col size="md-6 sm-12">
+          <p className="recommendation">
+            <strong>
+              {ruser.firstName} {ruser.lastName}'s recommendation
+            </strong>
+            : {book.description}
+          </p>
           {reviews.length ? (
-            <div style={{ marginTop: 10 }}>
+            <div style={{ marginTop: 5 }}>
               <List>
                 {reviews.map((review) => (
                   <ListItem key={review._id}>
-                    <Link to={"/reviews/read/" + review._id}>
-                      <strong>
-                        {review.firstName} {review.lastName}:{" "}
-                      </strong>
-                      {review.reviewBody}
-                    </Link>
+                    {/* <Link to={"/reviews/read/" + review._id}> */}
+
+                    <strong>
+                      {review.firstName} {review.lastName}:{" "}
+                    </strong>
+
+                    {review.reviewBody}
+
+                    {/* </Link> */}
                   </ListItem>
                 ))}
               </List>

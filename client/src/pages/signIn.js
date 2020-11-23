@@ -3,10 +3,7 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
-import { set } from "mongoose";
+import { Container } from "../components/Grid";
 
 //Signin component
 function SignIn(props) {
@@ -19,6 +16,7 @@ function SignIn(props) {
   const handleEmailInput = (event) => {
     setEmailInput(event.target.value);
     console.log(emailInput);
+    if (emailInput) setErrorEmail("");
   };
 
   //Password Hook
@@ -31,6 +29,7 @@ function SignIn(props) {
     console.log(passwordInput);
     let pl = passwordInput.length;
     console.log(pl);
+    if (passwordInput && pl > 6) setErrorPassword("");
   };
 
   //Redirect hook
@@ -61,7 +60,10 @@ function SignIn(props) {
           setErrorPassword("*Invalid email or password");
         });
     } else {
-      setErrorEmail("*Please enter your email");
+      if (!emailInput) {
+        setErrorEmail("*Please enter your email");
+      }
+      if (!passwordInput);
       setErrorPassword("*Please enter your password");
     }
   };

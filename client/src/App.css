@@ -59,11 +59,14 @@ form.signin {
 }
 .recommendation {
   background-color: #f5ee93;
-  margin-top: 16px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 0px;
   padding: 10px;
-  width: 100%;
+  width: 99%;
+}
+.book-list {
+  font-size: 22px;
 }
 .isbn {
   font-family: "Roboto";
@@ -83,11 +86,11 @@ h1 {
 }
 
 h1:hover {
-  text-shadow: 0 1px 0 rgb(243, 97, 0), 0 2px 0 rgb(230, 109, 11),
-    0 3px 0 rgb(230, 109, 11), 0 4px 0 rgb(230, 109, 11),
-    0 5px 0 rgb(230, 109, 11), 0 6px 0 rgb(240, 145, 67),
-    0 7px 0 rgb(238, 160, 96), 0 8px 0 rgb(236, 157, 82),
-    0 9px 0 rgb(238, 187, 20), 0 10px 0 rgb(236, 206, 36),
+  text-shadow: 0 1px 0 rgb(162, 190, 2), 0 2px 0 rgb(183, 230, 11),
+    0 3px 0 rgb(117, 230, 11), 0 4px 0 rgb(230, 208, 11),
+    0 5px 0 rgb(159, 201, 7), 0 6px 0 rgb(233, 212, 28),
+    0 7px 0 rgb(230, 158, 51), 0 8px 0 rgb(212, 123, 71),
+    0 9px 0 rgb(214, 129, 18), 0 10px 0 rgb(238, 165, 30),
     0 20px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -108,9 +111,33 @@ h1:hover {
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
   color: rgb(12, 12, 12);
-  text-shadow: 2px 2px 4px #883d12;
+  /* text-shadow: 2px 2px 4px #883d12; */
+}
+.nav-link {
+  font-size: 20px;
 }
 
+.app-name {
+  font-size: 28px;
+}
+.green {
+  font-size: 32px;
+  color: #e7f708;
+}
+.orange {
+  font-size: 32px;
+  color: orange;
+}
+.green-small {
+  font-size: 24px;
+  color: yellow;
+}
+.book-title {
+  font-size: 22px;
+}
+.back-link {
+  font-size: 18px;
+}
 /* .subt1 {
   font-family: "Open Sans", sans-serif;
   font-size: 25px;
@@ -135,12 +162,10 @@ h1:hover {
   float: right;
 }
 
-.book-title {
-  background-color: white;
-} */
+*/
 
 * {
   justify-content: center;
-  font-family: "Raleway", sans-serif;
+  font-family: "Fira Sand", sans-serif;
   font-size: 12pt;
 }

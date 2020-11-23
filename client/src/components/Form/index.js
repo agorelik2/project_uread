@@ -5,7 +5,7 @@ import React from "react";
 export function Input(props) {
   return (
     <div className="form-group">
-      <input className="form-control" {...props} />
+      <input className="form-control" style={{ fontSize: 18 }} {...props} />
     </div>
   );
 }
@@ -16,7 +16,7 @@ export function TextArea(props) {
       <textarea
         className="form-control"
         rows="20"
-        style={{ marginTop: 0 }}
+        style={{ marginTop: 0, fontSize: 18 }}
         {...props}
       />
     </div>

@@ -51,7 +51,7 @@ function Favorites(props) {
             <List>
               {savedBooks.map((savedBook) => (
                 <ListItem key={savedBook._id}>
-                  <strong className="saved-book">
+                  <strong className="book-title">
                     {savedBook.title + "   "}
                     by
                     {"   " + savedBook.authors}

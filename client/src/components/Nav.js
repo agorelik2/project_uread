@@ -6,9 +6,6 @@ import API from "../utils/API";
 function Nav(props) {
   const [redirect, setRedirect] = useState("");
 
-  // console.log("Navigation -  props.id");
-  // console.log(props.id);
-
   //Logout functionality
   const logOut = (e) => {
     e.preventDefault();
@@ -33,7 +30,12 @@ function Nav(props) {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="/books">
-          URead
+          <span className="app-name">
+            {" "}
+            <span className="green">U</span>
+            <span className="orange">R</span>
+            <span className="green-small">ead</span>
+          </span>
         </a>
         <button
           className="navbar-toggler"
@@ -53,7 +55,7 @@ function Nav(props) {
               <NavLink
                 to="/books"
                 // style={{ color: "green" }}
-                activeStyle={{ color: "red" }}
+                activeStyle={{ color: "orange" }}
                 className="nav-link"
               >
                 <i className="fas fa-book-reader"></i> Books
@@ -63,7 +65,7 @@ function Nav(props) {
               <NavLink
                 to="/search"
                 // style={{ color: "white" }}
-                activeStyle={{ color: "red" }}
+                activeStyle={{ color: "orange" }}
                 className="nav-link"
               >
                 <i className="fas fa-search"></i>
@@ -74,7 +76,7 @@ function Nav(props) {
               <NavLink
                 to="/favorites"
                 // style={{ color: "white" }}
-                activeStyle={{ color: "red" }}
+                activeStyle={{ color: "orange" }}
                 className="nav-link"
               >
                 <i className="far fa-heart"></i>

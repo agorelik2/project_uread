@@ -80,6 +80,10 @@ function Search(props) {
     }).catch((err) => console.log(err));
   }
 
+  // if (typeof result[index].industryIdentifiers[1].identifier !== 'undefined'){
+  //     const isbn = typeof result[index].industryIdentifiers[1].identifier
+  // }else{ isbn = ""}
+
   return (
     <Container fluid>
       <Nav
@@ -106,9 +110,12 @@ function Search(props) {
                 console.log(JSON.stringify(book, null, 2));
                 return (
                   <ListItem key={book.id}>
-                    <div className="book-title">
+                    <div>
                       <strong>
-                        {book.volumeInfo.title} by {book.volumeInfo.authors[0]}
+                        <span className="book-title">
+                          {book.volumeInfo.title} by{" "}
+                          {book.volumeInfo.authors[0]}
+                        </span>
                       </strong>
                     </div>
                     <br></br>
@@ -123,12 +130,12 @@ function Search(props) {
                         alt={book.volumeInfo.title}
                       />
                     </a>
-                    <strong>
+                    {/* <strong>
                       <p className="isbn">
                         ISBN#:{" "}
                         {book.volumeInfo.industryIdentifiers[1].identifier}
                       </p>
-                    </strong>
+                    </strong> */}
                     <p>{book.volumeInfo.description}</p>
 
                     <SaveBtn
@@ -150,7 +157,7 @@ function Search(props) {
                     >
                       <span className="recom-btn">
                         {" "}
-                        Recommend
+                        <strong>Recommend</strong>
                         <i className="far fa-thumbs-up fa-2x fa-fw"></i>{" "}
                       </span>
                     </Link>
