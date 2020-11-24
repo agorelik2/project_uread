@@ -51,9 +51,9 @@ As a user, I want to be able to find new books to read based on recommendations 
 
 - 'search' page can be accessed through the navigation bar or from the 'books' page. Search page allows user to search on a book via Google Books API by either directly typing the title into the search box or it can pre-fill the search box with a book title if accessed through the link on the books page. When presented with the search results, user can click on 'Save to Favorites' button to save a book, or 'Recommend a Book' link that will redirect him to the recommendations page (books) and prefill the recommendation form with book's title and author.
 
-- 'reviews' page can be accessed by used clicking on the book's title on the recommendations (books) page. On the reviews page, user can enter his own review or read the reviews for the book created by other users.
+- 'reviews' page can be accessed by used clicking on the book's title on the recommendations (books) page. On the reviews page, user can enter his own review or read the reviews for the same book written by other users.
 
-- 'favorites' page can be accessed through the navigation bar, and displays all the books previously saved
+- 'favorites' page can be accessed through the navigation bar, and displays all the books previously saved, and it has a link to google (user has to click on the image for the book)
 
 ## Database
 
@@ -94,11 +94,11 @@ Favorites page where you can come back to view or buy the book through the link 
 ![favorites](client/public/images/favorites.png)
 
 Reviews page where you can write a review for a book or read the reviews given by other members
-![reviews](client/public/images/reviews.png)
+![reviews](client/public/images/reviews2.png)
 
 ## Development
 
-#### First Phase:
+### First Phase:
 
 - Started by creating full stack structure for MERN app with REACT being a client. Used `npx create-react-app` to create REACT app in the `client` folder
 
@@ -108,41 +108,42 @@ Reviews page where you can write a review for a book or read the reviews given b
 
 - Created utils/API.js code for axios connections serving USERS and BOOKS, and APP.js to include the new routes `/signin`, `/signup`, `/logout` for user authentication and `/books` for recommendations
 
-- Build front-end code for SignIn, Signup and Books pages. Worked on REACT components utilized by SignIn, Signup and Books pages. Enabled routing in APP.js by using `BrowserRouter from "react-router-dom` in APP.js. Programmed login and getUsers functions for user authentication with passport and local strategy, created logout() functionality. Created REACT components and functions to find all book recomendations. On the back end, created code to handle routing for api/users and api/books.
+- Build front-end code for SignIn, Signup and Books pages. Worked on REACT components utilized by SignIn, Signup and Books pages. Enabled routing in APP.js by using `BrowserRouter` from `react-router-dom` in APP.js. Programmed `login(`) and `getUsers()` functions for user authentication with passport and local strategy, created `logout()` functionality. Created REACT components and functions to find all book recomendations. On the back end, created code to handle routing for `api/users` and `api/books`.
 
 ### SECOND Phase
 
-- Created functionality to allow `find all the books by userId`, including:
+#### Created functionality to allow find all the books by userId:
 
-  - added new field to Book collection to store `user._id` when new book document/record is created
-  - front-end code: new userBooks.js page/component
-  - back end route/controller to find the books by user's id.
-  - updated utils/API.js to create a new axios for api connection,
-  - updated APP.js to include new route `books/uid`
+- added new field to Book collection to store `user._id` when new book document/record is created
+- created new front-end code: new userBooks.js page/component
+- on the back end, added new custom route/controller code to find the books by user's id.
+- updated utils/API.js to create a new axios for api connection
+- updated APP.js to include new route `books/uid`
 
-- Created ability to search on a book utilizing Google Books API, and save favorite books in a new Favorite collection:
-  - Created FAVORITES - new database collection/model
-  - Updated utils/API.js to include new axios calls to serve database connections for favorites
-  - Created back end code including routes and controllers for READ, CREATE and DELETE operations for favorites
-  - On the front end, created two new pages/components: SEARCH.js and Favorites.js.
-  - Updated APP.js to include new routes for `/search` and `/favorites`
+##### Created ability to search on a book utilizing Google Books API, and save favorite books in a new Favorite collection:
+
+- Created FAVORITES - new database collection/model
+- Updated utils/API.js to include new axios calls to serve database connections for favorites
+- Created back end code including routes and controllers for READ, CREATE and DELETE operations for favorites
+- On the front end, created two new pages/components: SEARCH.js and Favorites.js.
+- Updated APP.js to include new routes for `/search` and `/favorites`
 
 ### THIRD Phase
 
-- Created ability for user to update and delete his own book recommendations
+#### Created ability for user to update and delete his own book recommendations
 
-  - Created back end code including routes and controllers for PUT and DELETE operations for books
-  - Updated utils/API.js to include new axios calls to serve database connections for PUT and DELETE
-  - On the front end, created two new page userBooks.js and components serving it
-  - Updated APP.js to include new route for `/userBooks`
+- Created back end code including routes and controllers for PUT and DELETE operations for books
+- Updated utils/API.js to include new axios calls to serve database connections for PUT and DELETE
+- On the front end, created two new page userBooks.js and components serving it
+- Updated APP.js to include new route for `/userBooks`
 
-- Created ability for user to add reviews
+#### Created ability for user to add reviews
 
-  - Created Reviews - new MongoDB collection/model
-  - Created back end code including routes and controllers for CRUD operations with Reviews
-  - Updated utils/API.js to include new axios calls to serve database connections for CRUD
-  - On the front end, created new page comments.js and the components serving the page
-  - Updated books.js and userBooks.js to link user to comments.js page once he clicks on the book's title
+- Created Reviews - new MongoDB collection/model
+- Created back end code including routes and controllers for CRUD operations with Reviews
+- Updated utils/API.js to include new axios calls to serve database connections for CRUD
+- On the front end, created new page comments.js and the components serving the page
+- Updated books.js and userBooks.js to link user to comments.js page once he clicks on the book's title
 
 ### Front End
 
