@@ -120,7 +120,7 @@ Reviews page where you can write a review for a book or read the reviews given b
 - updated utils/API.js to create a new axios for api connection
 - updated APP.js to include new route `books/uid`
 
-##### Created ability to search on a book utilizing Google Books API, and save favorite books in a new Favorite collection:
+#### Created ability to search on a book utilizing Google Books API, and save favorite books in a new Favorite collection:
 
 - Created FAVORITES - new database collection/model
 - Updated utils/API.js to include new axios calls to serve database connections for favorites
