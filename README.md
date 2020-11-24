@@ -72,11 +72,29 @@ Associations:
 
 ## Screen Shots
 
-The main screen of the application shows the search page, and displays the result of the search
-![image-1](client/public/images/search.png)
+Sign-in page
+![sign-in](client/public/images/sign-in.png)
 
-The second screen shows saved books and allows user to find the book on google by clicking on its image
-![image-1a](client/public/images/favorites.png)
+Sign up /Registration page for new users
+![signup](client/public/images/signup.png)
+
+Books page where you can recommend a book and view other people's recommendations, links to reviews
+![books](client/public/images/books.png)
+
+User's book page where you can update and delete your own book recommendations
+![my_books](client/public/images/my_books.png)
+
+User's book page: with the click of the update button, the form pre-fills with updated book title, author, and description
+![update-recommendations](client/public/images/update_rec.png)
+
+Search page where you can search on a book title, save to favorites and recommend that book
+![search](client/public/images/search.png)
+
+Favorites page where you can come back to view or buy the book through the link to Google
+![favorites](client/public/images/favorites.png)
+
+Reviews page where you can write a review or read the reviews given by other members
+![reviews](client/public/images/reviews.png)
 
 ## Development
 
