@@ -102,13 +102,13 @@ Reviews page where you can write a review for a book or read the reviews given b
 
 - Started by creating full stack structure for MERN app with REACT being a client. Used `npx create-react-app` to create REACT app in the `client` folder
 
-- Created the MERN/MVC structure first and worked upon each element required. Started with installing all the required dependencies, setting up the environmental variables and securing the sensitive data like password and database name by using DOTENV dependency and .ENV file. Created code for server.js, added code to connect to a MongoDB database named `uread` using the mongoose npm package.
+- Installed all the required dependencies, proceeded with setting up the environmental variables and securing the sensitive data like API key by using DOTENV dependency and .ENV file. Created code for server.js, added code to connect to a MongoDB database named `uread` using the mongoose npm package.
 
 - Worked on database structure, started just with 2 collections: Users and Books. Worked on the initial phase of the application that included user's authentication utilizing passport middleware, and front-end and back-end programming changes to enable users create book recommendations, store it in the database, and retrieve all the events stored.
 
 - Created utils/API.js code for axios connections serving USERS and BOOKS, and APP.js to include the new routes `/signin`, `/signup`, `/logout` for user authentication and `/books` for recommendations
 
-- Build front-end code for SignIn, Signout and Books pages. Worked on REACT components utilized by SignIn, Signout and Books pages. Enabled routing in APP.js by using `BrowserRouter from "react-router-dom` in APP.js. On the front end, programmed login and getUsers functions for user authentication with passport and local strategy. Created REACT components and functions to find all book recomendations. On the back end, created code to handle routing for api/users and api/books.
+- Build front-end code for SignIn, Signup and Books pages. Worked on REACT components utilized by SignIn, Signup and Books pages. Enabled routing in APP.js by using `BrowserRouter from "react-router-dom` in APP.js. Programmed login and getUsers functions for user authentication with passport and local strategy, created logout() functionality. Created REACT components and functions to find all book recomendations. On the back end, created code to handle routing for api/users and api/books.
 
 ### SECOND Phase
 
@@ -118,7 +118,7 @@ Reviews page where you can write a review for a book or read the reviews given b
   - front-end code: new userBooks.js page/component
   - back end route/controller to find the books by user's id.
   - updated utils/API.js to create a new axios for api connection,
-  - updated APP.js to include new route `books\uid`
+  - updated APP.js to include new route `books/uid`
 
 - Created ability to search on a book utilizing Google Books API, and save favorite books in a new Favorite collection:
   - Created FAVORITES - new database collection/model
@@ -142,15 +142,15 @@ Reviews page where you can write a review for a book or read the reviews given b
   - Created back end code including routes and controllers for CRUD operations with Reviews
   - Updated utils/API.js to include new axios calls to serve database connections for CRUD
   - On the front end, created new page comments.js and the components serving the page
-  - Updated books.js and userBooks.js to include a link connection to comments.js page
+  - Updated books.js and userBooks.js to link user to comments.js page once he clicks on the book's title
 
 ### Front End
 
-For this application, I have created React components, worked with helper/util functions, and utilized React lifecycle methods to query and display book recommendations, favorites, and reviews based on user searches.
+For this application, I have created React components, worked with helper/util functions, and utilized React lifecycle methods to query and display book recommendations, favorites, and reviews based on user searches. Created six React components that also serve as pages for the application: signIn.js, signOut.js, books.js, userBooks.js, search.js, favorites.js.
 
 ### Back End:
 
-I have built back-end utilizing three different sets of api routes/controllers:
+I have built back-end utilizing four different sets of api routes/controllers:
 
 BOOK routes/api/books.js and controllers/books.js handle the following operations:
 
@@ -175,8 +175,7 @@ FAVORITE routes/api/users.js and controllers/users.js handle the following opera
 2. save a favorite book routes/api/favorites --> post
 3. delete a favorite book routes/api/favorites/:id -->delete
 
-REVIEW
-routes/api/users.js and controllers/users.js handle the following operations:
+REVIEW routes/api/users.js and controllers/users.js handle the following operations:
 
 1. find all the reviews by book id routes/api/reviews/:id/all --> get
 2. find one review by review id routes/api/reviews/:id --> get
@@ -193,7 +192,7 @@ To use this application locally:
 - Clone the application
 - Use `npm install` to install all the dependencies, see [Dependencies](#dependencies) for the complete list
 - npm install axios
-- use `npm start`to start the development local environment
+- use `npm start`to start the develogitpment local environment
 - to deploy to production, run `npm run build` and this will trigger the build and then you can publish on Heroku
 
 ## Dependencies
